@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matematik Çalışmaları</title>
+  <meta name="description" content="Polinomlardan diferansiyel denklemlere interaktif çalışma sayfaları">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Matematik Çalışmaları</h1>
+      <p>Polinomlardan diferansiyel denklemlere: kağıt-kalem, interaktif grafik ve MATLAB.</p>
+    </header>
+
+    <main id="plan"></main>
+
+    <footer>
+      Notlar ve MATLAB betikleri:
+      <a href="https://github.com/SafakSahinn/matematik-calismalari">GitHub reposu</a>
+    </footer>
+  </div>
+
+  <script src="assets/plan.js"></script>
+  <script>
+    const main = document.getElementById("plan");
+    for (const faz of PLAN) {
+      const section = document.createElement("section");
+      section.className = "phase";
+      const h2 = document.createElement("h2");
+      h2.textContent = faz.faz;
+      section.appendChild(h2);
+
+      const ul = document.createElement("ul");
+      ul.className = "topics";
+      for (const k of faz.konular) {
+        const li = document.createElement("li");
+        li.className = "topic";
+
+        const num = document.createElement("span");
+        num.className = "num";
+        num.textContent = k.no;
+
+        const title = document.createElement(k.sayfa ? "a" : "span");
+        title.className = "title";
+        title.textContent = k.ad;
+        if (k.sayfa) title.href = k.sayfa;
+
+        const badge = document.createElement("span");
+        badge.className = "badge";
+        if (k.durum === "bitti") {
+          badge.classList.add("done");
+          badge.textContent = "Bitti";
+        } else if (k.sayfa) {
+          badge.classList.add("ready");
+          badge.textContent = "Sayfa hazır";
+        } else {
+          badge.textContent = "Yakında";
+        }
+
+        li.append(num, title, badge);
+        ul.appendChild(li);
+      }
+      section.appendChild(ul);
+      main.appendChild(section);
+    }
+  </script>
+</body>
+</html>

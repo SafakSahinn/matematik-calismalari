@@ -1,0 +1,12 @@
+# Telifli kaynak kitaplar repoya girmez
+*.pdf
+
+# MATLAB geçici dosyaları
+*.asv
+*.mex*
+slprj/
+
+# İşletim sistemi
+Thumbs.db
+desktop.ini
+.DS_Store

@@ -1,0 +1,148 @@
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --text: #1f2328;
+  --muted: #656d76;
+  --border: #e3e1db;
+  --accent: #2f6fdb;
+  --accent-soft: #e8f0fd;
+  --done: #1a7f37;
+  --done-soft: #e6f4ea;
+  --radius: 10px;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14161a;
+    --surface: #1c1f24;
+    --text: #e6e8eb;
+    --muted: #9aa3ad;
+    --border: #2d3138;
+    --accent: #6ea2ff;
+    --accent-soft: #1d2a40;
+    --done: #4ac26b;
+    --done-soft: #17301f;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #14161a;
+  --surface: #1c1f24;
+  --text: #e6e8eb;
+  --muted: #9aa3ad;
+  --border: #2d3138;
+  --accent: #6ea2ff;
+  --accent-soft: #1d2a40;
+  --done: #4ac26b;
+  --done-soft: #17301f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+header h1 { margin: 0 0 4px; font-size: 1.9rem; }
+header p { margin: 0; color: var(--muted); }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.phase {
+  margin-top: 32px;
+}
+
+.phase h2 {
+  font-size: 1.15rem;
+  margin: 0 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.topics {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.topic {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.topic .num {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--muted);
+  min-width: 2.6em;
+}
+
+.topic .title { flex: 1; }
+
+.badge {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+  background: var(--border);
+  color: var(--muted);
+}
+
+.badge.ready { background: var(--accent-soft); color: var(--accent); }
+.badge.done { background: var(--done-soft); color: var(--done); }
+
+/* Konu sayfaları için ortak yapı */
+.back { display: inline-block; margin-bottom: 16px; }
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px 20px;
+}
+
+.controls label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.controls input[type="range"] { width: 100%; accent-color: var(--accent); }
+
+.plot {
+  width: 100%;
+  min-height: 360px;
+}
+
+footer {
+  margin-top: 48px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
