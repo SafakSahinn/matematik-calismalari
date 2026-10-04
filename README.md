@@ -12,10 +12,10 @@ Her konu üç katmanda işlenir:
 ## Çalışma planı
 
 ### Faz 0: Temeller
-- [ ] 0.2 Polinomlar
-- [ ] 0.3 Karmaşık sayılar
-- [ ] 0.4 Fonksiyon kavramı
-- [ ] 0.5 Fonksiyon aileleri
+- [ ] 0.1 Polinomlar
+- [ ] 0.2 Karmaşık sayılar
+- [ ] 0.3 Fonksiyon kavramı
+- [ ] 0.4 Fonksiyon aileleri
 
 ### Faz 1: Calculus 1 (Türev)
 - [ ] 1.1 Limit, süreklilik, asimptotlar

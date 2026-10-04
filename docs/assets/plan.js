@@ -4,10 +4,10 @@ const PLAN = [
   {
     faz: "Faz 0: Temeller",
     konular: [
-      { no: "0.2", ad: "Polinomlar" },
-      { no: "0.3", ad: "Karmaşık sayılar" },
-      { no: "0.4", ad: "Fonksiyon kavramı" },
-      { no: "0.5", ad: "Fonksiyon aileleri" },
+      { no: "0.1", ad: "Polinomlar" },
+      { no: "0.2", ad: "Karmaşık sayılar" },
+      { no: "0.3", ad: "Fonksiyon kavramı" },
+      { no: "0.4", ad: "Fonksiyon aileleri" },
     ],
   },
   {
